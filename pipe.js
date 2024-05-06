@@ -36,7 +36,11 @@ class Pipe {
    * the variables in the top
    * @custom
    ****************************************************/
-  show() {}
+  show() {
+    fill(121, 85, 72);
+    rect(this.x, 0, this.width, this.topHeight);
+    rect(this.x, this.bottomY, this.width, this.bottomHeight);
+  }
 
   /****************************************************
    * Each pipe starts to the right of the canvas and
@@ -44,19 +48,40 @@ class Pipe {
    * This function updates in draw()
    * @custom
    ****************************************************/
-  update() {}
+  update() {
+    this.x -= this.speed;
+  }
 
   /****************************************************
    * Hit detection: when the unicorn hits the pipe
    * @custom
    ****************************************************/
-  hits(unicorn) {}
+  hits(unicorn) {
+    if (
+      unicorn.y < this.topHeight ||
+      unicorn.y + unicorn.height > CANVAS_HEIGHT - this.bottomHeight
+    ) {
+      if (
+        unicorn.x + unicorn.width > this.x &&
+        unicorn.x < this.x + this.width
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   /****************************************************
    * When the unicorn passes a pipe
    * @custom
    ****************************************************/
-  pass(unicorn) {}
+  pass(unicorn) {
+    if (unicorn.x > this.x && !this.passed) {
+      this.passed = true;
+      return true;
+    }
+    return false;
+  }
 
   /****************************************************
    * Check if the pipe is offscreen or not
