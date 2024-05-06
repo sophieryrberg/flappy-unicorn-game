@@ -28,7 +28,9 @@ class Background {
    * which takes img, x, y and size
    * @custom
    ****************************************************/
-  show() {}
+  show() {
+    image(backgroundImg, this.x, this.y, this.width, this.height);
+  }
 
   /****************************************************
    * Background starts to the right of the canvas and
@@ -36,5 +38,11 @@ class Background {
    * This function updates in draw()
    * @custom
    ****************************************************/
-  update() {}
+  update() {
+    this.x -= this.speed;
+    if (this.x + this.width <= CANVAS_WIDTH) {
+      image(backgroundImg, this.x + this.width, 0, this.width, this.height);
+      if (this.x <= -this.width) this.x = 0;
+    }
+  }
 }
