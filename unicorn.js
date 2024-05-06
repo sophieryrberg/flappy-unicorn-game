@@ -33,17 +33,33 @@ class Unicorn {
    * which takes img, x, y and size
    * @custom
    ****************************************************/
-  show() {}
+  show() {
+    image(unicornImg, this.x, this.y, this.width, this.height);
+  }
 
   /****************************************************
    * Create gravity
    * @custom
    ****************************************************/
-  update() {}
+  update() {
+    this.speed += this.gravity;
+    this.y += this.speed;
+
+    if (this.y > CANVAS_HEIGHT - this.height) {
+      this.y = CANVAS_HEIGHT - this.height;
+      this.speed = 0;
+    }
+    if (this.y < 0) {
+      this.y = 0;
+      this.speed = 0;
+    }
+  }
 
   /****************************************************
    * Make the unicorn go upwards
    * @custom
    ****************************************************/
-  up() {}
+  up() {
+    this.speed += this.lift;
+  }
 }
