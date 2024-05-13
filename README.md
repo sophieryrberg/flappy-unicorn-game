@@ -59,7 +59,7 @@ First we load the images we will be using.
 function preload() {
   backgroundImg = loadImage("images/background.png");
   unicornImg = loadImage("images/unicorn.png");
-  boidImg = loadImage("images/netlight-boid-black.png");
+  boidImg = loadImage("images/boid.png");
 }
 ```
 
@@ -388,8 +388,8 @@ Now our poor unicorn is falling forever and ever outside the canvas. We might wa
 ```js
 update() {
   /* ... */
-  if (this.y > (CANVAS_HEIGHT + this.height) / 2) {
-      this.y = (CANVAS_HEIGHT + this.height) / 2;
+  if (this.y > (CANVAS_HEIGHT + this.height) {
+      this.y = CANVAS_HEIGHT + this.height;
       this.speed = 0;
     }
   if (this.y < 0) {

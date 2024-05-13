@@ -23,8 +23,8 @@ class Unicorn {
   speed = 0;
   x = 64;
   y = CANVAS_HEIGHT / 2;
-  height = 64;
-  width = 46;
+  height = 46;
+  width = 64;
   gravity = 0.2;
   lift = -7;
 
