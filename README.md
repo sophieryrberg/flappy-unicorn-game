@@ -59,7 +59,7 @@ First we load the images we will be using.
 function preload() {
   backgroundImg = loadImage("images/background.png");
   unicornImg = loadImage("images/unicorn.png");
-  boidImg = loadImage("images/netlight-boid-black.png");
+  boidImg = loadImage("images/boid.png");
 }
 ```
 
