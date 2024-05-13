@@ -388,8 +388,8 @@ Now our poor unicorn is falling forever and ever outside the canvas. We might wa
 ```js
 update() {
   /* ... */
-  if (this.y > (CANVAS_HEIGHT + this.height) {
-      this.y = CANVAS_HEIGHT + this.height;
+  if (this.y > CANVAS_HEIGHT - this.height) {
+    this.y = CANVAS_HEIGHT - this.height;
       this.speed = 0;
     }
   if (this.y < 0) {
